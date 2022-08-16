@@ -18,7 +18,11 @@ public class BOJ_17608_Stick {
 			int temp = sc.nextInt();
 			int top = stack.peek();
 			if(top<=temp) {
-				stack.pop();
+				while(stack.peek()<=temp) {
+					stack.pop();
+					if(stack.size()==0) break;
+				}
+//				stack.pop();
 				stack.push(temp);
 			}
 			else {
