@@ -1,10 +1,10 @@
-package week2;
+package week03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BOJ_1193_Fraction {
+public class BOJ_1193_김지희 {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,4 +1,4 @@
-package week2;
+package week03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_2178_Maze {
+public class BOJ_2178_김지희 {
 	static int N, M;
 	static int[][] map;
 	static int[] dx = {0,0,1,-1};

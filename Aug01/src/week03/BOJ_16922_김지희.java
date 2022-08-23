@@ -1,8 +1,8 @@
-package week2;
+package week03;
 
 import java.util.Scanner;
 
-public class BOJ_16922_RomeNumber {
+public class BOJ_16922_김지희 {
 	static int N;
 	static int[] sums;
 	static int[] nums = {1,5,10,50};

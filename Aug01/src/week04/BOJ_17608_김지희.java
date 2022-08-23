@@ -1,9 +1,9 @@
-package week3;
+package week04;
 
 import java.util.Scanner;
 import java.util.Stack;
-
-public class BOJ_17608_Stick {
+//막대기
+public class BOJ_17608_김지희 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

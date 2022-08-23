@@ -1,8 +1,8 @@
-package week3;
+package week04;
 
 import java.util.Scanner;
-
-public class BOJ_2960_Eratosthenes {
+//에라토스테네스의 체
+public class BOJ_2960_김지희 {
 
 	
 	public static void main(String[] args) {

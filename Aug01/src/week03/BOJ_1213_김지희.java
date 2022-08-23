@@ -1,8 +1,8 @@
-package week2;
+package week03;
 
 import java.util.Scanner;
 
-public class BOJ_1213_Palindrome {
+public class BOJ_1213_김지희 {
 
 
 	static int[] alphabet;
