@@ -1,8 +1,8 @@
 package week06;
 
 import java.util.Scanner;
-
-public class BOJ_10162_전자레인지 {
+// 전자레인지
+public class BOJ_10162_김지희 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
