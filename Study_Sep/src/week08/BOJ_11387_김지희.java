@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //님 무기가 좀 나쁘시네여
+// 모 르 겠 어 요
+
 public class BOJ_11387_김지희 {
 	static class CombatPower{
 		int attack, power, prob, damage, speed;
@@ -20,13 +22,11 @@ public class BOJ_11387_김지희 {
 	}
 	
 	static CombatPower[] arr;
-	static CombatPower[] plus;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		
-		arr = new CombatPower[2];
-		plus = new CombatPower[2];
+		arr = new CombatPower[4];
 		for(int i=0; i<4; i++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
@@ -35,46 +35,43 @@ public class BOJ_11387_김지희 {
 			int d = Integer.parseInt(st.nextToken());
 			int s = Integer.parseInt(st.nextToken());
 			
-			if(i<2) {
+			if(i==1 || i==0) {
 				arr[i] = new CombatPower(a, pw, pr, d, s);	
 			}
 			
-			else {
-				plus[i-2] = new CombatPower(a, pw, pr, d, s);
+			else if(i==2) {
+				
+				arr[2] = new CombatPower(arr[0].attack-a, arr[0].power-pw, arr[0].prob-pr, arr[0].damage-d, arr[0].speed-s);
+				arr[3] = new CombatPower(arr[1].attack+a, arr[1].power+pw, arr[1].prob+pr, arr[1].damage+d, arr[1].speed+s);
+			}
+			else if(i==3) {
+				arr[3] = new CombatPower(arr[3].attack-a, arr[3].power-pw, arr[3].prob-pr, arr[3].damage-d, arr[3].speed-s);
+				arr[2] = new CombatPower(arr[2].attack+a, arr[2].power+pw, arr[2].prob+pr, arr[2].damage+d, arr[2].speed+s);
+				
 			}
 		}
-		float c = calc(arr[0]); //현재 전투력
-		float p = calc(arr[1]);
-		CombatPower pc = new CombatPower(arr[0].attack-plus[0].attack+plus[1].attack, arr[0].power-plus[0].power +plus[1].power , 
-				arr[0].prob-plus[0].prob+plus[1].prob, arr[0].damage-plus[0].damage+plus[1].damage, 
-				arr[0].speed-plus[0].speed+plus[1].speed);
-		CombatPower pp = new CombatPower(arr[1].attack+plus[0].attack-plus[1].attack, arr[1].power+plus[0].power -plus[1].power , 
-				arr[1].prob+plus[0].prob-plus[1].prob, arr[1].damage+plus[0].damage-plus[1].damage, 
-				arr[1].speed+plus[0].speed-plus[1].speed);
-		float nc = calc(pc);
-		float np = calc(pp);
+		double c = calc(0); //현재 전투력
+		double p = calc(1);
+		double nc = calc(2);
+		double np = calc(3);
 		
-		if(c>nc) System.out.println("-");
-		else if(c==nc) System.out.println("0");
-		else System.out.println("+");
-		
-		
-		if(p>np) System.out.println("-");
-		else if(p==np) System.out.println("0");
-		else System.out.println("+");
-		
+		System.out.println(check(c, nc));
+		System.out.println(check(p, np));
 		
 	}
 	
-	private static float calc(CombatPower cur) {
+	private static double calc(int idx) {
 		//전투력 = attack(1+pw/100) X [{1-min(prob, 1)} + min(prob, 1) X damage] x {1+ speed)
-		float tempProb = (float)cur.prob/100;
-		float tempDmg = (float)cur.damage/100;
-		float tempSpd = (float)cur.speed/100;
-		
-		float result = cur.attack * (1+(float)cur.power/100) * ((1-Math.min(tempProb, 1)) + Math.min(tempProb, 1) * tempDmg) * (1+tempSpd);
-		
-		return result;
+		CombatPower cur = arr[idx];
+		int pb = Math.min(100, cur.prob);
+		double combat = cur.attack * ((100+cur.power)*0.01) * ((1-pb*0.01) + ((pb*0.01) * cur.damage)) * (1+cur.speed);
+//		System.out.println(combat);
+		return combat;
 	}
 	
+	private static String check(double a, double b) {
+		if(a>b) return "-";
+		else if(a<b) return "+";
+		else return "0";
+	}
 }
