@@ -41,6 +41,8 @@ public class Solution_1952_수영장 {
 		}
 	}
 	private static void dfs(int cnt, int price) {
+		if(price>=answer) return;
+		
 		if(cnt>12) {
 			answer = Math.min(answer, price);
 			return;
@@ -61,5 +63,6 @@ public class Solution_1952_수영장 {
 		}else if(plan[cnt]==0) {
 			dfs(cnt+1, price);
 		}
+		
 	}
 }
