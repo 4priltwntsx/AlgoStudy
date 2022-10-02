@@ -32,7 +32,7 @@ public class BOJ_11053_LIS {
 			dp[i] = max+1;
 			answer = Math.max(answer, dp[i]);
 		}
-//        answer = N!=1 ? answer : 1;
+        answer = N==1 ? 1 : answer;
 		System.out.println(answer);
 		
 	}
