@@ -95,7 +95,6 @@ public class Solution_1953_탈주범검거 {
 						answer++;
 						Q.add(new Point(nx, ny, map[nx][ny]));
 					}
-
 				}
 			}
 			cnt++;
