@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BOJ_2805_나무자르기 {
+public class BOJ_2805_김지희 {
 	static int N, M;  
 	
 	public static void main(String[] args) throws IOException {

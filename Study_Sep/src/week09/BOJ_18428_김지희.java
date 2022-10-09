@@ -77,15 +77,6 @@ public class BOJ_18428_김지희 {
 	}
 	
 	private static void bfs() {
-		int[][] copyVisit = new int[N][N];
-		
-		
-//		for(int i=0; i<N; i++) {
-//			for(int j=0; j<N; j++) {
-//				copyVisit[i][j] = visit[i][j];
-//			}
-//		} //bfs내에서 사용할 visit배열 copy
-		//필요가 없어지는 중...
 		
 		for(Point p : teachers) {
 			

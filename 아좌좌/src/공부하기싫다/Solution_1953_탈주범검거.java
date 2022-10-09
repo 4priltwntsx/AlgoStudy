@@ -55,10 +55,52 @@ public class Solution_1953_탈주범검거 {
 					}
 				}
 			}
-			answer = 1;
-			bfs(R, C, mtype);
+			
+			visit[R][C] = 1;
+			answer = 0;
+//			bfs(R, C, mtype);
+			dfs(R, C, 1);
+			count();
+			
 			System.out.println("#"+tc+" "+answer);
 
+		}
+	}
+	
+	private static void dfs(int x, int y, int time) {
+		if(time==L) {
+			
+			return;
+		}
+		
+		int curType = map[x][y];
+		
+		for(int i : type[curType]) {
+			int nx = x + dx[i];
+			int ny = y + dy[i];
+			
+			if (nx < 0 || ny < 0 || nx >= N || ny >= M)
+				continue;
+			if (map[nx][ny] == 0)
+				continue;
+
+			int ni = i % 2 == 0 ? i + 1 : i - 1;
+
+			if (dirCheck(ni, map[nx][ny])) { // 방향 갈 수 있으면
+				if(visit[nx][ny] == 0 || visit[nx][ny] > visit[x][y]+1) {
+					visit[nx][ny] = time + 1;
+					dfs(nx, ny, time+1);
+				}
+			}
+		}
+	}
+	
+	private static void count() {
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if (visit[i][j] >= 1)
+					answer++;
+			}
 		}
 	}
 
