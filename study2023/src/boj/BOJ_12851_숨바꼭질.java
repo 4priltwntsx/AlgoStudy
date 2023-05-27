@@ -15,7 +15,7 @@ public class BOJ_12851_숨바꼭질 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
 		K = Integer.parseInt(st.nextToken());
-		
+
 		visit = new int[100001];
 		ans_cnt = 0;
 		ans_time = Integer.MAX_VALUE;
@@ -33,10 +33,12 @@ public class BOJ_12851_숨바꼭질 {
 
 			for (int s = 0; s < size; s++) {
 				int cur = Q.poll();
-				
+
 				if (cur == K) {
-					if(ans_time>time && visit[cur]==0) ans_time = time;
-					if(time==ans_time) ++ans_cnt;
+					if (ans_time > time && visit[cur] == 0)
+						ans_time = time;
+					if (time == ans_time)
+						++ans_cnt;
 					continue;
 				}
 				visit[cur] = 1;
@@ -45,7 +47,7 @@ public class BOJ_12851_숨바꼭질 {
 					Q.add(next);
 				}
 				next = cur + 1;
-				if ( next <= 100000 && visit[next] == 0) {
+				if (next <= 100000 && visit[next] == 0) {
 					Q.add(next);
 				}
 				next = cur * 2;
