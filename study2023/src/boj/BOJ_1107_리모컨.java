@@ -15,7 +15,7 @@ public class BOJ_1107_리모컨 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		M = Integer.parseInt(br.readLine());
-		brokens = new boolean[10]; 
+		brokens = new boolean[10];
 		// 1. 고장난 버튼이 있다면
 		if (M != 0) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
@@ -41,14 +41,15 @@ public class BOJ_1107_리모컨 {
 	}
 
 	public static void dfs(int idx, String click) {
-		if(idx>6) return;
+		if (idx > 6)
+			return;
 		for (int i = 0; i < 10; i++) {
 			if (brokens[i])
 				continue;
 			String cur_click = click + Integer.toString(i);
 			int cnt = Math.abs(N - Integer.parseInt(cur_click)) + cur_click.length();
 			result = result > cnt ? cnt : result;
-			dfs(idx+1, cur_click);
+			dfs(idx + 1, cur_click);
 		}
 	}
 }
