@@ -12,18 +12,18 @@ public class BOJ_10828_스택 {
 		StringTokenizer st;
 		Stack<Integer> stack = new Stack<>();
 		StringBuilder sb = new StringBuilder();
-		for(int n=0; n<N; n++) {
+		for (int n = 0; n < N; n++) {
 			st = new StringTokenizer(br.readLine());
 			String cmd = st.nextToken();
-			switch(cmd) {
+			switch (cmd) {
 			case "push":
 				int num = Integer.parseInt(st.nextToken());
 				stack.push(num);
 				break;
 			case "pop":
-				if(!stack.isEmpty()) {
+				if (!stack.isEmpty()) {
 					sb.append(stack.pop()).append("\n");
-				}else {
+				} else {
 					sb.append(-1).append("\n");
 				}
 				break;
@@ -35,15 +35,14 @@ public class BOJ_10828_스택 {
 				sb.append(flag).append("\n");
 				break;
 			case "top":
-				if(!stack.isEmpty()) {
+				if (!stack.isEmpty()) {
 					sb.append(stack.peek()).append("\n");
-				}
-				else {
+				} else {
 					sb.append("-1").append("\n");
 				}
 				break;
 			}
-		} 
+		}
 		System.out.print(sb.toString());
 	}
 }
