@@ -28,6 +28,7 @@ public class BOJ_1963_소수 {
 			System.out.println(answer);
 		}
 	}
+	
 	public static void bfs() {
 		boolean[] visit = new boolean[10000];
 		visit[A] = true;
