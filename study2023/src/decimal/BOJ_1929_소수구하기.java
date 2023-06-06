@@ -5,8 +5,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BOJ_1929_소수구하기 {
+	
 	static boolean[] prime;
 	static int M, N;
+	
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -21,6 +23,7 @@ public class BOJ_1929_소수구하기 {
 			}
 		}
 	}
+	
 	public static void sieve() {
 		for(int i=2; i*i<=N; i++) {
 			if(!prime[i]) {
