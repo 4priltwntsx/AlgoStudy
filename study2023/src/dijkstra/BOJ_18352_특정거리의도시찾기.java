@@ -8,6 +8,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class BOJ_18352_특정거리의도시찾기 {
+	
 	static int N, M, K, X;
 
 	static class City implements Comparable<City> {
