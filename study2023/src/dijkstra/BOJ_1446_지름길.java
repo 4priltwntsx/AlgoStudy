@@ -8,6 +8,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class BOJ_1446_지름길 {
+	
 	static class Load implements Comparable<Load>{
 		int vertex, distance;
 		Load(int vertex, int distance){
@@ -18,6 +19,7 @@ public class BOJ_1446_지름길 {
 			return this.distance-o.distance;
 		}
 	}
+	
 	static int N, D; // N: 지름길 개수, D : 고속도로 길이
 	static ArrayList<Load>[] list;
 	static int[] dist;
