@@ -15,7 +15,7 @@ public class BOJ_17281_야구 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		N = Integer.parseInt(br.readLine());
-		players = new int[N+1][10];
+		players = new int[N + 1][10];
 		for (int i = 1; i <= N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 1; j <= 9; j++) {
@@ -115,13 +115,14 @@ public class BOJ_17281_야구 {
 					score++; // 바로 득점
 					break;
 				}
-				if(idx==10) idx = 1;
-				
-				if(out_count==3) { // 근데 아웃 카운트가 3개가 됐다. 그러면
+				if (idx == 10)
+					idx = 1;
+
+				if (out_count == 3) { // 근데 아웃 카운트가 3개가 됐다. 그러면
 					break;
 				}
 			}
 		}
-		answer = answer<score ? score : answer;
+		answer = answer < score ? score : answer;
 	}
 }
