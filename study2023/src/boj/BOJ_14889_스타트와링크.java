@@ -31,22 +31,24 @@ public class BOJ_14889_스타트와링크 {
 			int sumStart = 0;
 			int sumLink = 0;
 			for (int j = 1; j < N; j++) {
-				for(int k=j+1; k<=N; k++) {
-					if(team[j]==1  && team[k]==1) {
-						sumStart +=capability[j][k];
-						sumStart +=capability[k][j];
+				for (int k = j + 1; k <= N; k++) {
+					if (team[j] == 1 && team[k] == 1) {
+						sumStart += capability[j][k];
+						sumStart += capability[k][j];
 					}
-					if(team[j]==0 && team[k]==0) {
+					if (team[j] == 0 && team[k] == 0) {
 						sumLink += capability[j][k];
 						sumLink += capability[k][j];
 					}
 				}
 			}
-			int sub = Math.abs(sumStart-sumLink);
-			if(sub<=answer) answer = sub;
+			int sub = Math.abs(sumStart - sumLink);
+			if (sub <= answer)
+				answer = sub;
 			return;
 		}
-		if(answer==0) System.out.println(0);
+		if (answer == 0)
+			System.out.println(0);
 
 		for (int i = idx; i <= N; i++) { // team Start의 조합 구하기
 			team[i] = 1;
