@@ -20,5 +20,6 @@ public class BOJ_안정된집단 {
 		
 		ArrayList<Integer>[] list = new ArrayList[N+1];
 		// 모르겠는디
+		
 	}
 }

@@ -3,7 +3,7 @@ package 심심풀이;
 import java.time.LocalDate;
 import java.util.*;
 
-public class UseCollection {
+public class 기본과제10 {
 
 	public static void main(String[] args) {
 
