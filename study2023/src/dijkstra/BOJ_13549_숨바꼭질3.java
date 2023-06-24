@@ -7,16 +7,19 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class BOJ_13549_숨바꼭질3 {
+	
 	static class Point implements Comparable<Point>{
 		int index, time;
 		Point(int index, int time){
 			this.index = index;
 			this.time = time;
 		}
+		@Override
 		public int compareTo(Point o) {
 			return this.time-o.time;
 		}
 	}
+	
 	static int N, K;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
