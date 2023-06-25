@@ -42,6 +42,7 @@ public class BOJ_1261_알고스팟 {
 		for(int i=0; i<N; i++) {
 			map[i] = br.readLine().toCharArray();
 		}
+		
 		answer = 0;
 		bfs();
 		System.out.print(answer);
