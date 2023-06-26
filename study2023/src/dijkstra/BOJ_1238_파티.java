@@ -36,6 +36,7 @@ public class BOJ_1238_파티 {
 		
 		list = new ArrayList[N+1];
 		backlist = new ArrayList[N+1];
+		
 		for(int i=0; i<=N; i++) {
 			list[i] = new ArrayList<>(); // x마을에서 N번의 마을로...시작점 X
 			backlist[i] = new ArrayList<>(); // X마을로 향하는 최단 경로를 구하기 위한 list
