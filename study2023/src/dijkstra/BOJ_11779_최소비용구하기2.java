@@ -19,6 +19,7 @@ public class BOJ_11779_최소비용구하기2 {
 			return this.cost - o.cost;
 		}
 	}
+	
 	static int N, M;
 	static ArrayList<ArrayList<Bus>> citys;
 	static int[] dist;
