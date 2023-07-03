@@ -57,4 +57,6 @@ public class CT_하나은행인턴_2번 {
 			this.j = j;
 		}
 	}
+	
+	// 모르겠음...
 }
