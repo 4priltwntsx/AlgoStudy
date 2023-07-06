@@ -36,7 +36,7 @@ public class BOJ_1260_DFS와BFS {
 		bfs(V);
 		System.out.print(sb.toString());
 	}
-	
+	 
 	private static void dfs(int vertex) {
 		visit[vertex] = 1;
 		sb.append(vertex).append(" ");
