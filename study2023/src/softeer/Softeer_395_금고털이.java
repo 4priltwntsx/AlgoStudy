@@ -18,7 +18,7 @@ public class Softeer_395_금고털이 {
             return o.p - this.p;
         }
 
-    }
+    } 
     public static void main(String args[]) throws Exception
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
