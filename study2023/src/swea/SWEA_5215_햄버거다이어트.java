@@ -30,7 +30,7 @@ public class SWEA_5215_햄버거다이어트 {
 			System.out.println(sb.toString());
 		} // test case end
 	}
-
+ 
 	public static void dfs(int idx, int sumCal, int sumSco, int N, int L) {
 		if(sumCal>L) return; // 제한 칼로리를 넘는다면
 		if(idx==N) {
