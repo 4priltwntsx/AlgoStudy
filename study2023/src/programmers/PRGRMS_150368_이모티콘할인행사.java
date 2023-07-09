@@ -11,7 +11,7 @@ public class PRGRMS_150368_이모티콘할인행사 {
     public static void main(String[] args) throws IOException{
     	
     }
-    
+     
     public int[] solution(int[][] users, int[] emoticons) {
         int[] answer = new int[2];
         int emoticons_length = emoticons.length;
