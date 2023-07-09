@@ -55,7 +55,7 @@ public class BOJ_1717_집합의표현 {
 			}
 		}
 	}
-	
+	 
 	// 부모가 같은지 확인
 	public static boolean isSame(int x, int y) {
 		x = find(x);
