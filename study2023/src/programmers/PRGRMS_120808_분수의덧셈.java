@@ -12,7 +12,7 @@ public class PRGRMS_120808_분수의덧셈 {
         answer[0] = ansNumer/min;
         answer[1] = ansDenom/min;
         return answer;
-    }
+    } 
     private static int gcd(int a, int b){ 
         if(b == 0) return a; 
         return gcd(b, a % b); 
