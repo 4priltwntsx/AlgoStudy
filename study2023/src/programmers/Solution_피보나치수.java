@@ -27,3 +27,4 @@ public class Solution_피보나치수 {
 		System.out.println(solution(5));
 	}
 }
+ 
