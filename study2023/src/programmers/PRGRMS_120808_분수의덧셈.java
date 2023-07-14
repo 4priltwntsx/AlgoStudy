@@ -22,5 +22,4 @@ public class PRGRMS_120808_분수의덧셈 {
 		int[] answer = solution(1,2,3,4);
 		System.out.print(answer[0] + " "+answer[1]);
 	}
-
 }
