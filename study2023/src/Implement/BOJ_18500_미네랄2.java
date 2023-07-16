@@ -148,7 +148,7 @@ public class BOJ_18500_미네랄2 {
 				boolean bottom = false;
 				for (Point cur : list) {
 					int ni = cur.i + dist;
-					if (ni >= R) {
+					if (ni >= R) { // 이해가 잘 안 되는 부분...ㅠㅠ
 						bottom = true;
 						break;
 					}
