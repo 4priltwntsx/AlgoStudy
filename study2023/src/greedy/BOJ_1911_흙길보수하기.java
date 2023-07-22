@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BOJ_1911_흙길보수하기 {
+	
 	static class Pool implements Comparable<Pool> {
 		int start, end;
 
