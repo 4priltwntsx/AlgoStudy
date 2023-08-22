@@ -25,7 +25,7 @@ public class BOJ_4963_섬의개수 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
 			M = Integer.parseInt(st.nextToken());
-			if(N==0 && M==0) {
+			if (N == 0 && M == 0) {
 				break;
 			}
 			map = new int[M][N];
@@ -37,9 +37,9 @@ public class BOJ_4963_섬의개수 {
 				}
 			}
 			answer = 0;
-			for(int i=0; i<M; i++) {
-				for(int j=0; j<N; j++) {
-					if(map[i][j]==1 && visit[i][j]==0) {
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					if (map[i][j] == 1 && visit[i][j] == 0) {
 						dfs(i, j);
 						answer++;
 					}
@@ -49,19 +49,22 @@ public class BOJ_4963_섬의개수 {
 		}
 		System.out.print(sb.toString());
 	}
-	
+
 	public static void dfs(int nowi, int nowj) {
 		visit[nowi][nowj] = 1;
-		
-		for(int d=0; d<8; d++) {
+
+		for (int d = 0; d < 8; d++) {
 			int ni = nowi + di[d];
 			int nj = nowj + dj[d];
-			
-			if(ni<0 || nj<0 || ni>=M || nj>=N) continue;
-			
-			if(visit[ni][nj]==1) continue;
-			if(map[ni][nj]==0) continue;
-			
+
+			if (ni < 0 || nj < 0 || ni >= M || nj >= N)
+				continue;
+
+			if (visit[ni][nj] == 1)
+				continue;
+			if (map[ni][nj] == 0)
+				continue;
+
 			dfs(ni, nj);
 		}
 	}
