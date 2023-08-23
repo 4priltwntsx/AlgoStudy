@@ -20,7 +20,7 @@ public class BOJ_1865_웜홀 {
 	static ArrayList<Edge>[] graph;
 	static long[] dist;
 	static final int INF = 987654321;
-	
+
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int TC = Integer.parseInt(br.readLine());
@@ -53,7 +53,7 @@ public class BOJ_1865_웜홀 {
 				graph[s].add(new Edge(e, t * (-1)));
 			}
 			boolean cycle = false;
-			sb.append(bellman(1)?"YES\n" : "NO\n");
+			sb.append(bellman(1) ? "YES\n" : "NO\n");
 		}
 		System.out.println(sb.toString());
 	}
@@ -80,7 +80,7 @@ public class BOJ_1865_웜홀 {
 		if (flag) { // N번째에 또 값이 변한다 확인
 			for (int i = 1; i <= N; i++) {
 				for (Edge edge : graph[i]) {
-					if ( dist[edge.vertex] > dist[i] + edge.weight)
+					if (dist[edge.vertex] > dist[i] + edge.weight)
 						return true;
 				}
 			}
