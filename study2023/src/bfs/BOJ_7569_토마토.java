@@ -52,7 +52,7 @@ public class BOJ_7569_토마토 {
 			System.out.print(0);
 		} else {
 			bfs();
-			System.out.println(unripe > 0 ? -1 : answer-1); // 모든 토마토가 익고 나서도 answer++가 되므로
+			System.out.println(unripe > 0 ? -1 : answer - 1); // 모든 토마토가 익고 나서도 answer++가 되므로
 		}
 
 	}
