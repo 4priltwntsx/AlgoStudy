@@ -24,7 +24,6 @@ public class BOJ_7569_토마토 {
 	static int[][][] visit, map; // 높이, 가로 세로
 	static Queue<Point> Q;
 	static int unripe, answer;
-
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
