@@ -43,7 +43,7 @@ public class BOJ_10828_스택 {
 				}
 				break;
 			}
-		}
+		} 
 		System.out.print(sb.toString());
 	}
 }
