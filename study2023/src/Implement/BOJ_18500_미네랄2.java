@@ -56,7 +56,13 @@ public class BOJ_18500_미네랄2 {
 			stick_throw(arr[i], dir);
 		}
 
-		print();
+		for (int i = 0; i < R; i++) {
+			for (int j = 0; j < C; j++) {
+				System.out.print(map[i][j]);
+			}
+			if(i==R-1) break;
+			System.out.println();
+		}
 
 	}
 
@@ -121,13 +127,12 @@ public class BOJ_18500_미네랄2 {
 				}
 			}
 		}
-		for (int i = 0; i < R; i++) {
-			for (int j = 0; j < C; j++) {
-				System.out.print(visit[i][j]);
-			}
-			System.out.println();
-		}
-		System.out.println("오잉");
+//		for (int i = 0; i < R; i++) {
+//			for (int j = 0; j < C; j++) {
+//				System.out.print(visit[i][j]);
+//			}
+//			System.out.println();
+//		}
 		// cluster_idx : 클러스터 개수
 
 		// 바닥에 붙어 있는 클러스터를 제외하고, 중력작용
@@ -138,13 +143,12 @@ public class BOJ_18500_미네랄2 {
 
 			// 현재 클러스터(list)가 바닥이나 다른 클러스터까지 얼마나 내려가는지 확인
 			int dist = 1;
-			boolean bottom = false;
-
 			while (true) {
 				// 내 현재 cluster_idx랑 visit에 있는 cluster_idx랑 다르면 다른 클러스터
+				boolean bottom = false;
 				for (Point cur : list) {
 					int ni = cur.i + dist;
-					if (ni == R - 1) {
+					if (ni >= R) {
 						bottom = true;
 						break;
 					}
@@ -155,12 +159,12 @@ public class BOJ_18500_미네랄2 {
 					// 바닥이나 클러스터를 못 만났으면 더 내려간다.
 				}
 				if (bottom) {
+					dist--;
 					break;
 				}
 				dist++;
 			}
-			print();
-			System.out.println("오잉"+dist);
+
 			for(Point cur : list) {
 				map[cur.i][cur.j]= '.';
 				map[cur.i+dist][cur.j] = 'x';
