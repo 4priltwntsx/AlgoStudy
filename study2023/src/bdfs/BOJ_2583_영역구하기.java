@@ -73,6 +73,5 @@ public class BOJ_2583_영역구하기 {
 			if(map[ni][nj]==1) continue;
 			dfs(ni, nj);
 		}
-		 
 	}
 }
