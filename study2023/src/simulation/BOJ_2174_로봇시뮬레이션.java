@@ -95,7 +95,7 @@ public class BOJ_2174_로봇시뮬레이션 {
 
 	public static int getDir(int now, int repeat, char ch) {
 		repeat %= 4;
-		if (ch == 'L') {
+		if (ch == 'R') {
 			if (now - repeat < 0) {
 				now += 4;
 			}
@@ -106,6 +106,5 @@ public class BOJ_2174_로봇시뮬레이션 {
 			}
 			return now + repeat;
 		}
-
 	}
 }
