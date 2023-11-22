@@ -1,37 +1,45 @@
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-	static int N;
-	static int[] arr, dp; // arr : 병사 전투력 담을 배열
-	
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	static int dp[];
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
-		N = Integer.parseInt(br.readLine());
+		int A = Integer.parseInt(br.readLine());
+		int[] arr = new int[A+1];
+		dp = new int[A+1];
 		
-		arr = new int[N];
-		dp = new int[N];
-		st = new StringTokenizer(br.readLine());
-		for(int i=0; i<N; i++) {
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int i=1; i<=A; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
-		//input end
 		
-		dp[0] = 1;
-		int answer =0;
-		for(int i=1; i<N; i++) {
-			int max = 0;
-			for(int j=i-1; j>=0; j--) {
-				if(arr[j]<arr[i] && dp[j]>max) max=dp[j];
+		dp[1] = arr[1];
+		int longest = 1;
+		for(int i=2; i<=A; i++) {
+			if(arr[i]>dp[longest]) {
+				dp[longest+1] = arr[i];
+				longest++; // dp의 마지막 인덱스
 			}
-			dp[i] = max+1;
-			answer = Math.max(answer, dp[i]);
+			
+			int pos = binarySearch(0, longest, arr[i]);
+			dp[pos] = arr[i];
 		}
-        answer = N!=1 ? answer : 1;
-		System.out.println(answer);
-		
+		System.out.println(longest);
+	}
+	
+	public static int binarySearch(int left, int right, int target) {
+		int mid = 0;
+		while(left<right) {
+			mid = (left+right) / 2;
+			if(dp[mid] < target) {
+				left = mid + 1;
+			}
+			else {
+				right = mid;
+			}
+		}
+		return right;
 	}
 }
