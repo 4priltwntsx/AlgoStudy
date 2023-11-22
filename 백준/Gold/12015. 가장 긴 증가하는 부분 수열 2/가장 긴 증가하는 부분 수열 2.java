@@ -1,42 +1,45 @@
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	static int dp[];
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
+		int A = Integer.parseInt(br.readLine());
+		int[] arr = new int[A+1];
+		dp = new int[A+1];
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int i=1; i<=A; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		dp[1] = arr[1];
+		int longest = 1;
+		for(int i=2; i<=A; i++) {
+			if(arr[i]>dp[longest]) {
+				dp[longest+1] = arr[i];
+				longest++; // dp의 마지막 인덱스
+			}
+			
+			int pos = binarySearch(0, longest, arr[i]);
+			dp[pos] = arr[i];
+		}
+		System.out.println(longest);
+	}
 	
-        int N = Integer.parseInt(br.readLine());
-        
-        List<Integer> list = new ArrayList<>();
-        int[] arr = new int[N]; // 수열의 수들
-        int[] C = new int[N]; //동적 테이블 C[k] : 해당(k) 길이를 만족하는 자리(k자리)에 오는 수의 최소값
-          
-        st = new StringTokenizer(br.readLine());
-        for(int i=0; i<N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-         
-        int size = 0;
-        for (int i = 0; i < N; i++) {
-
-            int pos = Arrays.binarySearch(C, 0, size, arr[i]);
-            if(pos>=0) { //대상을 찾음.
-                continue;
-            }
-            //대상을 못 찾음. 삽입 위치로
-            int insertPos = Math.abs(pos)-1; //맨 뒤 또는 기존 원소 대체 자리가 될 수 있음.
-             
-            C[insertPos] = arr[i];
-             
-            if(insertPos == size) size++;
-             
-        }
-        System.out.println(size);
+	public static int binarySearch(int left, int right, int target) {
+		int mid = 0;
+		while(left<right) {
+			mid = (left+right) / 2;
+			if(dp[mid] < target) {
+				left = mid + 1;
+			}
+			else {
+				right = mid;
+			}
+		}
+		return right;
 	}
 }
