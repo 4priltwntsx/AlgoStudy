@@ -10,12 +10,10 @@ import java.util.StringTokenizer;
 public class BOJ_3190_뱀 {
 	static class Point {
 		int i, j;
-		int dir;
 
-		Point(int i, int j, int dir) {
+		Point(int i, int j) {
 			this.i = i;
 			this.j = j;
-			this.dir = dir;
 		}
 	}
 
@@ -55,7 +53,7 @@ public class BOJ_3190_뱀 {
 
 	public static void move() {
 		Queue<Point> Q = new LinkedList<>();
-		Q.add(new Point(0, 0, 0));
+		Q.add(new Point(0, 0));
 		map[0][0] = 2; // 뱀 표시
 		int nowi = 0, nowj = 0;
 		head = 0;
@@ -73,9 +71,9 @@ public class BOJ_3190_뱀 {
 
 			if (map[ni][nj] == 1) { // 사과 먹음
 				map[ni][nj] = 2;
-				Q.add(new Point(ni, nj, head));
+				Q.add(new Point(ni, nj));
 			} else { // 안 먹음
-				Q.add(new Point(ni, nj, head));
+				Q.add(new Point(ni, nj));
 				map[ni][nj] = 2;
 				
 				Point tail = Q.poll();
